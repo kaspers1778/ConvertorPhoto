@@ -17,7 +17,7 @@ namespace PhotoConvertor
             InitializeComponent();
         }
 
-        Image OriginPicture;
+        Bitmap OriginPicture;
         
 
         private void btn_choosePicture_Click(object sender, EventArgs e)
@@ -28,8 +28,11 @@ namespace PhotoConvertor
 
             if (choosePicture.ShowDialog() == DialogResult.OK)
             {
-                OriginPicture = new Bitmap(choosePicture.OpenFile());
+                OriginPicture = new Bitmap(choosePicture.OpenFile());                
+                pb_Original.Width = OriginPicture.Width;
+                pb_Original.Height = OriginPicture.Height;
                 pb_Original.Image = OriginPicture;
+                txb_sizeOfOriginal.Text = Convert.ToString(OriginPicture.Width) + "X" + Convert.ToString(OriginPicture.Height);
             }
         }
     }
