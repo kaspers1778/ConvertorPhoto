@@ -72,6 +72,7 @@
             this.btn_execute.TabIndex = 3;
             this.btn_execute.Text = "Convert";
             this.btn_execute.UseVisualStyleBackColor = true;
+            this.btn_execute.Click += new System.EventHandler(this.btn_execute_Click);
             // 
             // txb_sizeOfOriginal
             // 
