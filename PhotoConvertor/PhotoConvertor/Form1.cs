@@ -60,5 +60,19 @@ namespace PhotoConvertor
             txb_sizeOfSolution.Text = Convert.ToString(SolutiunPicture.Width) + "X" + Convert.ToString(SolutiunPicture.Height);
 
         }
+
+        private void btn_savePicture_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            saveFileDialog.Title = "Save an Image File";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.FileStream saving = (System.IO.FileStream)saveFileDialog.OpenFile();
+                pb_solution.Image.Save(saving, System.Drawing.Imaging.ImageFormat.Jpeg);
+                saving.Close();
+            }
+           
+        }
     }
 }

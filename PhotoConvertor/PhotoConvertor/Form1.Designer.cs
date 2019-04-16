@@ -117,6 +117,7 @@
             this.btn_savePicture.TabIndex = 8;
             this.btn_savePicture.Text = "Save picture";
             this.btn_savePicture.UseVisualStyleBackColor = true;
+            this.btn_savePicture.Click += new System.EventHandler(this.btn_savePicture_Click);
             // 
             // Form1
             // 
